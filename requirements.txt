@@ -1,0 +1,6 @@
+astropy
+corner
+matplotlib
+pymultinest
+scipy
+typeguard
