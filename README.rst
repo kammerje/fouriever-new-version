@@ -43,15 +43,16 @@ You should now be able to run fouriever:
 If you have issues with the PyPI installation of pymultinest, try the following:
 
 ::
-        pip uninstall pymultinest
-        conda install conda-forge::pymultinest
+
+	pip uninstall pymultinest
+	conda install conda-forge::pymultinest
 
 Usage
 *****
 
 The following functions are available in the :code:`Fouriever` class:
 
-:code:`read`: Read in science and calibrator target data. Note that :code`calibrate_classical` needs to be called afterwards to calibrate the data, it is not done automatically!
+:code:`read`: Read in science and calibrator target data. Note that :code:`calibrate_classical` needs to be called afterwards to calibrate the data, it is not done automatically!
 
 - :code:`scifiles` (required): List of science target files (paths).
 - :code:`calfiles` (optional): List of calibrator target files (paths).
@@ -67,7 +68,7 @@ The following functions are available in the :code:`Fouriever` class:
 
 :code:`add_cov`: Add covariances to the data according to `Kammerer et al. (2020) <https://ui.adsabs.harvard.edu/abs/2020A%26A...644A.110K/abstract>`__.
 
-:code`calibrate_classical`: Calibrate the science target data using the calibrator target data.
+:code:`calibrate_classical`: Calibrate the science target data using the calibrator target data.
 
 - :code:`weighting` (optional): Can be :code:`'standard'`, :code:`'error'`, or :code:`'covariance'` to use the mean, error-weighted mean, or covariance-weighted mean of the calibrator target data.
 - :code:`write` (optional): Bool - save calibrated data to OIFITS file or not?
