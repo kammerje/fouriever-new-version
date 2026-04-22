@@ -1183,7 +1183,7 @@ class Fouriever():
                     temp[0] = pp['x'][0]
                     pps += [temp]
                     temp = np.zeros(3)
-                    temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense()))
+                    temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense())[0])
                     pes += [temp]
                     chi2s += [pp['fun']]
                     niter += [pp['nit']]
@@ -1885,7 +1885,7 @@ class Fouriever():
 
         else:
             pp = p0.copy()
-            pp[0] = c0
+            pp[0] = np.asarray(c0).item()
             chi2_test = func(p0=pp,
                              data_list=data_list,
                              obs=obs,
@@ -1917,7 +1917,7 @@ class Fouriever():
 
         else:
             fit_inj_copy = deepcopy(fit_inj)
-            fit_inj_copy['p'][0] = c0
+            fit_inj_copy['p'][0] = np.asarray(c0).item()
             data_list_copy = deepcopy(data_list)
             data_list_copy = util.injec_companion(fit_inj=fit_inj_copy,
                                                   data_list=data_list_copy,
@@ -2068,10 +2068,10 @@ class Fouriever():
                         niter_absil += [np.inf]
                     else:
                         temp = p0.copy()
-                        temp[0] = pp['x']
+                        temp[0] = np.asarray(pp['x']).item()
                         pps_absil += [temp]
                         temp = np.zeros(3)
-                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense()))
+                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense())[0])
                         pes_absil += [temp]
                         chi2s_absil += [pp['fun']]
                         niter_absil += [pp['nit']]
@@ -2097,10 +2097,10 @@ class Fouriever():
                         niter_injec += [np.inf]
                     else:
                         temp = p0.copy()
-                        temp[0] = pp['x']
+                        temp[0] = np.asarray(pp['x']).item()
                         pps_injec += [temp]
                         temp = np.zeros(3)
-                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense()))
+                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense())[0])
                         pes_injec += [temp]
                         chi2s_injec += [pp['fun']]
                         niter_injec += [pp['nit']]
@@ -2211,10 +2211,10 @@ class Fouriever():
                         niter_absil += [np.inf]
                     else:
                         temp = p0.copy()
-                        temp[0] = pp['x']
+                        temp[0] = np.asarray(pp['x']).item()
                         pps_absil += [temp]
                         temp = np.zeros(4)
-                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense()))
+                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense())[0])
                         pes_absil += [temp]
                         chi2s_absil += [pp['fun']]
                         niter_absil += [pp['nit']]
@@ -2240,10 +2240,10 @@ class Fouriever():
                         niter_injec += [np.inf]
                     else:
                         temp = p0.copy()
-                        temp[0] = pp['x']
+                        temp[0] = np.asarray(pp['x']).item()
                         pps_injec += [temp]
                         temp = np.zeros(4)
-                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense()))
+                        temp[0] = np.sqrt(max(1., abs(pp['fun'])) * self.ftol * np.diag(pp['hess_inv'].todense())[0])
                         pes_injec += [temp]
                         chi2s_injec += [pp['fun']]
                         niter_injec += [pp['nit']]
