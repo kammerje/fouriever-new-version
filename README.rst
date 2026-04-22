@@ -13,12 +13,6 @@ Start by cloning the Git repository:
 
 	git clone https://github.com/kammerje/fouriever-new-version.git
 
-If you would like to install a specific branch (e.g., the :code:`develop` branch):
-
-::
-
-	git clone https://github.com/kammerje/fouriever-new-version.git@develop
-
 It is **highly** recommended that you create a unique Conda environment to hold all of the fouriever dependencies:
 
 ::
