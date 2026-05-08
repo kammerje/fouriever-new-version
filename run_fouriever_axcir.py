@@ -8,7 +8,7 @@ import astropy.io.fits as pyfits
 import matplotlib.pyplot as plt
 import numpy as np
 
-from fouriever import fouriever
+from fouriever import core
 
 import matplotlib
 matplotlib.rcParams.update({'font.size': 14})
@@ -20,7 +20,7 @@ matplotlib.rcParams.update({'font.size': 14})
 
 # Initialize fouriever.
 obj = 'axcir'
-fe = fouriever.Fouriever(odir='test/', obj=obj)
+fe = core.Fouriever(odir='test/', obj=obj)
 
 # Read data.
 scifiles = ['test/axcir.oifits']
